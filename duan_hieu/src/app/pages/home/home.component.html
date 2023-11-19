@@ -1,0 +1,183 @@
+<!-- HEADER -->
+<div>
+  <link rel="stylesheet" href="home.component.scss">
+  <nav class="bg-white border-gray-200 dark:bg-gray-900" id="menu-client">
+    <div class="max-w-screen-2xl flex flex-wrap items-center justify-between mx-auto p-4">
+      <div class="ml-8">
+        <a href="https://flowbite.com/" class="">
+          <img
+            src="https://png.pngtree.com/template/20191125/ourlarge/pngtree-book-store-logo-template-sale-learning-logo-designs-vector-image_335046.jpg"
+            class="h-[100px] w-[100px] " alt="Flowbite Logo" />
+        </a>
+      </div>
+      <div class="flex md:order-2 ">
+        <div class="p-1.5 mr-7 flex gap-2">
+          <div *ngIf="user;else loginLogo">
+            <p>{{user.user.name}}</p>
+            <button (click)="logout()">Logout</button>
+          </div>
+          <ng-template #loginLogo>
+            <mat-icon class="cursor-pointer" routerLink="/login">account_circle</mat-icon>
+          </ng-template>
+          <mat-icon class="cursor-pointer" routerLink="/cart">shopping_cart_border</mat-icon>
+          <mat-icon class="cursor-pointer">favorite_border</mat-icon>
+        </div>
+        <button data-collapse-toggle="navbar-search" type="button"
+          class="inline-flex items-center p-2 text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
+          aria-controls="navbar-search" aria-expanded="false">
+          <span class="sr-only">Open menu</span>
+          <svg class="w-6 h-6" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20"
+            xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd"
+              d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z"
+              clip-rule="evenodd"></path>
+          </svg>
+        </button>
+      </div>
+      <div class="items-center justify-between hidden w-full md:flex md:w-auto md:order-1" id="navbar-search">
+        <div class="relative mt-3 md:hidden">
+          <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
+            <svg class="w-5 h-5 text-gray-500" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20"
+              xmlns="http://www.w3.org/2000/svg">
+              <path fill-rule="evenodd"
+                d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z"
+                clip-rule="evenodd"></path>
+            </svg>
+          </div>
+          <input type="text" id="search-navbar"
+            class="block w-full p-2 pl-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+            placeholder="Search...">
+        </div>
+
+        <ul
+          class="flex text-lg flex-col gap-10 p-4 md:p-0 mt-4 font-medium border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:space-x-8 md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
+          <li>
+            <a href="#"
+              class="hover:bg-teal-800 hover:text-white hover:text-2xl hover:px-7 hover:py-1  py-2 pl-3 pr-4 rounded-xl md:bg-transparent no-underline md:text-black md:p-0 md:dark:text-blue-500 hover:ease-in duration-300 ..."
+              aria-current="page" routerLink="/home">Home</a>
+          </li>
+          <li>
+            <a href="#"
+              class="hover:bg-teal-800 hover:text-white hover:text-2xl hover:px-7 hover:py-1 py-2 pl-3 pr-4  rounded-xl md:bg-transparent no-underline md:text-black md:p-0 md:dark:text-blue-500 hover:ease-in duration-300 ..."
+              aria-current="page" routerLink="/products">Products</a>
+          </li>
+
+          <li>
+            <a href="#"
+              class="hover:bg-teal-800 hover:text-white hover:text-2xl hover:px-7 hover:py-1 py-2 pl-3 pr-4  rounded-xl md:bg-transparent no-underline md:text-black md:p-0 md:dark:text-blue-500 hover:ease-in duration-300 ..."
+              aria-current="page" routerLink="/about">About</a>
+          </li>
+          <li>
+            <a href="#"
+              class="hover:bg-teal-800 hover:text-white hover:text-2xl hover:px-7 hover:py-1 py-2 pl-3 pr-4  rounded-xl md:bg-transparent no-underline md:text-black md:p-0 md:dark:text-blue-500 hover:ease-in duration-300 ..."
+              aria-current="page" routerLink="/blog">Blog</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+</div>
+
+
+<section id="home-section">
+  <div class="container  mx-auto">
+    <div class="banner pt-28">
+      <img src="https://cdn0.fahasa.com/media/wysiwyg/Thang-11-2023/Fahasa_saleT3_Tuan2_LDP_Mainbanner_web.jpg"
+        class=" w-full h-max" alt="">
+    </div>
+    <div class="text-center text-3xl font-sans font-bold mt-5">
+      <p>Who are you shopping for?</p>
+    </div>
+    <div class="container  mx-auto">
+
+      <div class="grid mx-44  gap-5 grid-cols-4 justify-items-center">
+        <div *ngFor="let product of products  " class=" my-3 " style="width: 18rem">
+          <div class=" border container mx-auto justify-center">
+            <a href="" class="container justify-center" [routerLink]="['/product/', product._id]">
+              <img src="{{ product.image }}" alt="" class=" object-center	" />
+            </a>
+            <a [routerLink]="['/product/', product._id]" class="btn btn-primary">Chi tiết</a>
+            <div class="">
+              <h5 class="font-sans text-lg font-semibold text-gray-800 mt-3">{{ product.name }}</h5>
+              <p class="card-text font-light ">Price: {{ product.price }}đ</p>
+              <div class=" flex flex-col items-center ">
+                <button (click)="addToCart(product)" type="button"
+                  class=" hover:border mt-3 text-white bg-black hover:bg-white hover:text-black focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center mr-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+                  <svg aria-hidden="true" class="w-5 h-5 mr-2 -ml-1" fill="currentColor" viewBox="0 0 20 20"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path
+                      d="M3 1a1 1 0 000 2h1.22l.305 1.222a.997.997 0 00.01.042l1.358 5.43-.893.892C3.74 11.846 4.632 14 6.414 14H15a1 1 0 000-2H6.414l1-1H14a1 1 0 00.894-.553l3-6A1 1 0 0017 3H6.28l-.31-1.243A1 1 0 005 1H3zM16 16.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0zM6.5 18a1.5 1.5 0 100-3 1.5 1.5 0 000 3z">
+                    </path>
+                  </svg>
+                  Buy now
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <div class="container mx-auto justify-center pt-4">
+      <img src="https://cdn0.fahasa.com/media/wysiwyg/Thang-11-2023/Fahasa_saleT3_Tuan2_LDP_Tagname_01.jpg"
+        class="w-[1530px]" alt="">
+    </div>
+    <div class="container mx-auto text-gray-600 bg-orange-200 justify-center gap-[60px] mt-10 pt-5 rounded-lg my-4">
+      <div class="content container mx-auto">
+        <img src="https://cdn0.fahasa.com/media/wysiwyg/Thang-11-2023/Fahasa_saleT3_Tuan2_LDP_Banner_01.png"
+          class="w-[1530px]" alt="">
+      </div>
+    </div>
+    <div class="w-full flex h-[120px] gap-6  bg-amber-300 text-center items-center justify-center align-middle my-4">
+      <p class="text-4xl font-semibold pt-[15px]">Join our Book Group to receive 15% OFF</p>
+      <button class="w-[350px] h-[55px] bg-black text-white text-lg" routerLink="/register"> SIGN UP FOR FREE </button>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<div class="">
+  <footer class="container mx-auto p-7">
+    <div class="flex gap-2 container">
+      <div class="w-1/3 text-lg">
+        Lầu 5, 387-389 Hai Bà Trưng Quận 3 TP HCM <br>Công Ty Cổ Phần Phát Hành Sách TP HCM - FAHASA60 <br> - 62 Lê Lợi,
+        Quận 1, TP. HCM, Việt Nam <br> <br>Fahasa.com nhận đặt hàng trực tuyến và giao hàng tận nơi. <br> KHÔNG hỗ trợ
+        đặt mua và nhận hàng trực tiếp tại văn phòng <br> cũng như tất cả Hệ Thống Fahasa trên toàn quốc.
+        <div class="py-2">
+          <img src="https://cdn0.fahasa.com/media/wysiwyg/Logo-NCC/logo-bo-cong-thuong-da-thong-bao1.png" class="w-36"
+            alt="">
+        </div>
+        <div class="flex py-2">
+          <img src="https://cdn0.fahasa.com/skin/frontend/ma_vanese/fahasa/images/footer/Facebook-on.png" alt="">
+          <img src="https://cdn0.fahasa.com/skin/frontend/ma_vanese/fahasa/images//footer/Insta-on.png" alt="">
+          <img src="https://cdn0.fahasa.com/skin/frontend/ma_vanese/fahasa/images//footer/Youtube-on.png" alt="">
+          <img src="https://cdn0.fahasa.com/skin/frontend/ma_vanese/fahasa/images//footer/tumblr-on.png" alt="">
+          <img src="https://cdn0.fahasa.com/skin/frontend/ma_vanese/fahasa/images//footer/twitter-on.png" alt="">
+          <img src="https://cdn0.fahasa.com/skin/frontend/ma_vanese/fahasa/images//footer/pinterest-on.png" alt="">
+        </div>
+        <div class="flex gap-2 py-2">
+          <img src="https://cdn0.fahasa.com/media/wysiwyg/Logo-NCC/android1.png" class="w-52 h-16" alt="">
+          <img src="https://cdn0.fahasa.com/media/wysiwyg/Logo-NCC/appstore1.png" class="w-52 h-16" alt="">
+        </div>
+      </div>
+      <div>
+
+      </div>
+    </div>
+  </footer>
+  <div class="bg-gray-200 h-20">
+    <div class="pt-8 text-center flex gap-2 justify-center">
+      <button class="text-gray-600 text-xs">Cookie Settings</button>
+      <p class="text-gray-600">|</p>
+      <button class="text-gray-600 text-xs">Data Settings</button>
+      <p class="text-gray-600">|</p>
+      <button class="text-gray-600 text-xs">Privacy Centre</button>
+      <p class="text-gray-600">|</p>
+      <button class="text-gray-600 text-xs">Cookies</button>
+      <p class="text-gray-600">|</p>
+      <button class="text-gray-600 text-xs">Privacy Notice</button>
+      <p class="text-gray-600">|</p>
+      <button class="text-gray-600 text-xs">Terms and Conditions</button>
+    </div>
+  </div>
+</div>
