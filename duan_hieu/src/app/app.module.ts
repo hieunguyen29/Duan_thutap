@@ -26,6 +26,7 @@ import { EditComponent } from './pages/admin/edit/edit.component';
 import { AboutComponent } from './pages/about/about.component';
 import { BlogComponent } from './pages/blog/blog.component';
 import { CartPageComponent } from './pages/cart-page/cart-page.component';
+import { OrderComponent } from './pages/order/order/order.component';
 
 
 
@@ -52,7 +53,7 @@ import { CartPageComponent } from './pages/cart-page/cart-page.component';
     AboutComponent,
     BlogComponent,
     CartPageComponent,
- 
+    OrderComponent,
 
   
 

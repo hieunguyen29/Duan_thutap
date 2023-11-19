@@ -16,7 +16,8 @@ import { NotFoundComponent } from './pages/not-found/not-found.component';
 import { ProductDetailComponent } from './pages/product-detail/product-detail.component';
 import { ProductsComponent } from './pages/products/products.component';
 import { RegisterComponent } from './pages/register/register.component';
-
+import { OrderComponent } from './pages/order/order/order.component';
+import { OrderTrueComponent } from './pages/order-true/order-true/order-true.component';
 const routes: Routes = [
   {
     path: '',
@@ -30,6 +31,8 @@ const routes: Routes = [
       { path: 'blog', component: BlogComponent },
       { path: 'cart', component: CartPageComponent },
       {path:'product/:id',component:ProductDetailComponent},
+      {path: 'order/:id',component:OrderComponent},
+      {path: 'order-success',component:OrderTrueComponent},
 
       {
         path: 'login',

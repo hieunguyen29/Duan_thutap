@@ -92,7 +92,7 @@
             </a>
             <a [routerLink]="['/product/', product._id]" class="btn btn-primary">Chi tiết</a>
             <div class="">
-              <h5 class="font-sans text-lg font-semibold text-gray-800 mt-3">{{ product.name }}</h5>
+              <h5 class="font-sans text-lg font-semibold text-gray-800 mt-3 truncate ...">{{ product.name }}</h5>
               <p class="card-text font-light ">Price: {{ product.price }}đ</p>
               <div class=" flex flex-col items-center ">
                 <button (click)="addToCart(product)" type="button"

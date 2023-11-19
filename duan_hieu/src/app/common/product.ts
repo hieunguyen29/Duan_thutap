@@ -1,4 +1,5 @@
 export interface IProduct {
+    quanlity: number;
     _id:string | number,
     name:string,
     price:number,

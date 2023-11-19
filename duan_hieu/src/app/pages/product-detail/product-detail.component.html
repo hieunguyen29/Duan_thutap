@@ -56,12 +56,6 @@
               class="hover:bg-teal-800 hover:text-white hover:text-2xl hover:px-7 hover:py-1 py-2 pl-3 pr-4  rounded-xl md:bg-transparent no-underline md:text-black md:p-0 md:dark:text-blue-500 hover:ease-in duration-300 ..."
               aria-current="page" routerLink="/products">Products</a>
           </li>
-
-          <li>
-            <a href="#"
-              class="hover:bg-teal-800 hover:text-white hover:text-2xl hover:px-7 hover:py-1 py-2 pl-3 pr-4  rounded-xl md:bg-transparent no-underline md:text-black md:p-0 md:dark:text-blue-500 hover:ease-in duration-300 ..."
-              aria-current="page" routerLink="/about">About</a>
-          </li>
           <li>
             <a href="#"
               class="hover:bg-teal-800 hover:text-white hover:text-2xl hover:px-7 hover:py-1 py-2 pl-3 pr-4  rounded-xl md:bg-transparent no-underline md:text-black md:p-0 md:dark:text-blue-500 hover:ease-in duration-300 ..."
@@ -85,7 +79,7 @@
     <div>
       <div class="flex gap-4 pt-7">
         <p class="text-xl pt-[2px]">Name:</p>
-        <p class="font-medium text-2xl">{{product.name}}</p>
+        <p class="font-medium text-2xl truncate...">{{product.name}}</p>
       </div>
       <div class="flex gap-2 py-2">
         <svg class="w-5" xmlns="http://www.w3.org/2000/svg"
@@ -106,10 +100,19 @@
       <p class="text-xl pt-[2px] text-black">Price:</p>
       <p class="text-2xl font-bold text-red-500">{{product.price}}$</p>
     </div>
-    <p class="py-2">{{product.desc}}</p>
+    <p class="py-2" *ngIf="!showFullDescription">
+      {{product.desc.slice(0, 150)}}
+      <span *ngIf="product.desc.length > 150">
+        <button (click)="showFullDescription = true">Xem thêm</button>
+      </span>
+    </p>
+    <p class="py-2" *ngIf="showFullDescription">{{product.desc}}</p>
+    <span *ngIf="showFullDescription">
+      <button class="" (click)="showFullDescription = false">Thu gọn</button>
+    </span>
     <br class="">
     <div class="py-3">
-      <div class="px-5 py-2 bg-red-500 w-[150px] text-center text-white text-xl rounded-lg">ĐĂT HÀNG</div>
+      <div class="px-5 py-2 bg-red-500 w-[150px] text-center text-white text-xl rounded-lg"> <button (click)="redirectToOrderPage(product._id.toString())">Đặt hàng</button></div>
     </div>
   </div>
 </div>
