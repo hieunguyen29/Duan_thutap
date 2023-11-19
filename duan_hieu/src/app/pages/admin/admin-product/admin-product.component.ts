@@ -9,6 +9,7 @@ import { ProductService } from 'src/app/services/product/product.service';
   styleUrls: ['./admin-product.component.scss']
 })
 export class AdminProductComponent implements OnInit {
+  showFullDescription: boolean | undefined;
   constructor(private router: Router, private productService: ProductService) {
   }
   
@@ -28,5 +29,11 @@ export class AdminProductComponent implements OnInit {
       this.products = this.products.filter(product => product._id !== id);
     });
   }
+}
+redirectToOrderPage(productId: string) {
+  this.router.navigate(['/order', productId]);
+}
+toggleDescription() {
+  this.showFullDescription = !this.showFullDescription;
 }
 }
