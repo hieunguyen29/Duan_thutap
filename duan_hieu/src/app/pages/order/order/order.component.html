@@ -1,72 +1,32 @@
-<h1>{{ product.name }}</h1>
-<form (ngSubmit)="placeOrder()">
-  <div class="form-group">
-    <label for="productId">ID Sản phẩm:</label>
-    <input
-      type="text"
-      id="productId"
-      name="productId"
-      [(ngModel)]="order.productId"
-      [value]="product._id"
-    />
-  </div>
-
-  <div class="form-group">
-    <label for="quanlity">Số lượng:</label>
-    <input
-      type="number"
-      id="quanlity"
-      name="quanlity"
-      [(ngModel)]="order.quanlity"
-      required
-    />
-  </div>
-  <div class="form-group">
-    <label for="shippingAddress">Name :</label>
-    <input
-      type="text"
-      id="nameUser"
-      name="nameUser"
-      [(ngModel)]="order.nameUser"
-      required
-    />
-  </div>
-  <div class="form-group">
-    <label for="shippingAddress">Địa chỉ giao hàng:</label>
-    <input
-      type="text"
-      id="shippingAddress"
-      name="shippingAddress"
-      [(ngModel)]="order.shippingAddress"
-      required
-    />
-  </div>
-  <div class="form-group">
-    <label>Phương thức thanh toán:</label>
-    <div class="form-check">
-      <input
-        type="radio"
-        id="cash"
-        name="paymentMethod"
-        value="cash"
-        [(ngModel)]="order.paymentMethod"
-        required
-      />
-      <label for="cash">Cash</label>
+<link rel="stylesheet" href="order.component.css">
+<div class="container">
+  <h1>{{ product.name }}</h1>
+  <form (ngSubmit)="placeOrder()">
+    <div class="form-group">
+      <label for="productId">ID Sản phẩm:</label>
+      <input type="text" id="productId" name="productId" [(ngModel)]="order.productId" [value]="product._id" />
     </div>
-    <div class="form-check">
-      <input
-        type="radio"
-        id="vnpay"
-        name="paymentMethod"
-        value="vnpay"
-        [(ngModel)]="order.paymentMethod"
-        required
-      />
-      <label for="vnpay">VNPay</label>
+    <div class="form-group">
+      <label for="quanlity">Số lượng:</label>
+      <input type="number" id="quanlity" name="quanlity"  [(ngModel)]="order.quanlity" required />
     </div>
-  </div>
-
-  <button type="submit">Đặt hàng</button>
-</form>
-
+    <div class="form-group">
+      <label for="nameUser">Name:</label>
+      <input type="text" id="nameUser" name="nameUser" placeholder="Mời nhập tên" [(ngModel)]="order.nameUser" required />
+    </div>
+    <div class="form-group">
+      <label for="shippingAddress">Địa chỉ giao hàng:</label>
+      <input type="text" id="shippingAddress" name="shippingAddress" placeholder="Mời nhập địa chỉ" [(ngModel)]="order.shippingAddress" required />
+    </div>
+    <div class="form-group">
+      <label>Phương thức thanh toán:</label>
+      <div class="payment-method">
+        <input type="radio" id="cash" name="paymentMethod" value="cash" [(ngModel)]="order.paymentMethod" required />
+        <label for="cash">Cash</label>
+        <input type="radio" id="vnpay" name="paymentMethod" value="vnpay" [(ngModel)]="order.paymentMethod" required />
+        <label for="vnpay">VNPay</label>
+      </div>
+    </div>
+    <button type="submit">Đặt hàng</button>
+  </form>
+</div>
