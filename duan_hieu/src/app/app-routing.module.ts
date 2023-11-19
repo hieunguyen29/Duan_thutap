@@ -3,7 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { AuthGuard } from './guard/auth.guard';
 import { LayoutAdminComponent } from './layouts/layout-admin/layout-admin.component';
 import { LayoutClientComponent } from './layouts/layout-client/layout-client.component';
-import { AboutComponent } from './pages/about/about.component';
+// import { AboutComponent } from './pages/about/about.component';
 import { AdminProductComponent } from './pages/admin/admin-product/admin-product.component';
 import { CreateComponent } from './pages/admin/create/create.component';
 import { DashboardComponent } from './pages/admin/dashboard/dashboard.component';
@@ -26,7 +26,7 @@ const routes: Routes = [
       { path: '', redirectTo: 'home', pathMatch: 'full' },
       { path: 'home', component: HomeComponent },
       { path: 'products', component: ProductsComponent },
-      { path: 'about', component: AboutComponent },
+      // { path: 'about', component: AboutComponent },
       { path: 'blog', component: BlogComponent },
       { path: 'cart', component: CartPageComponent },
       {path:'product/:id',component:ProductDetailComponent},
